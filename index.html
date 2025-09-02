@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto de Impacto Social: Conecta Vovô</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .canvas-table th, .canvas-table td {
+            border: 1px solid #e2e8f0;
+            padding: 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .canvas-table th {
+            background-color: #f8fafc;
+            font-weight: 600;
+            width: 30%;
+        }
+        .app-screen {
+            background-color: #f0f2f5;
+        }
+        .lesson-button {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+        .app-content.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Cabeçalho -->
+    <header class="bg-[#aa9ebb] text-white shadow-lg">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <h1 class="text-5xl font-extrabold tracking-tight">Projeto Conecta Vovô</h1>
+            <p class="mt-4 text-xl text-gray-200">Promovendo a Inclusão Digital na Terceira Idade</p>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mx-auto px-6 py-12">
+        
+        <!-- Seção: O Desafio -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">O Desafio da Exclusão Digital</h2>
+            <div class="flex flex-col lg:flex-row gap-8 items-center">
+                <div class="lg:w-1/2">
+                    <img src="https://placehold.co/600x400/e0e7ff/3730a3?text=Inclusão+Digital" alt="Idoso aprendendo a usar um tablet com um jovem" class="rounded-2xl shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <p class="text-lg leading-relaxed">
+                        Em um mundo cada vez mais conectado, muitos idosos enfrentam uma barreira digital. A falta de familiaridade com tecnologias básicas, como smartphones e a internet, não apenas os exclui socialmente, mas também dificulta o acesso a serviços essenciais, desde agendamento de consultas médicas até o contato com familiares.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Nossa Solução -->
+        <section class="mb-16 bg-white p-8 lg:p-12 rounded-2xl shadow-md">
+            <h2 class="text-4xl font-bold text-center mb-10 text-gray-900">Nossa Solução: O Aplicativo>: <strong> CONECTA VOVÔ</strong></h2>
+            <div class="flex flex-col lg:flex-row-reverse gap-8 items-center">
+                 <div class="lg:w-1/2">
+                    <!-- Maquete INTERATIVA do app -->
+                    <div class="w-full max-w-sm mx-auto h-[650px] bg-white border-8 border-gray-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+                        
+                        <!-- TELA PRINCIPAL DO APP -->
+                        <div id="home-screen-app" class="app-content flex flex-col h-full">
+                            <header class="bg-[#aa9ebb] text-white p-5 text-center shrink-0">
+                                <h1 class="text-2xl font-bold">Conecta Vovô</h1>
+                                <p class="text-sm">Aprender a usar o celular é fácil!</p>
+                            </header>
+                            <main class="flex-grow p-4 overflow-y-auto app-screen">
+                                 <h2 class="text-xl font-semibold text-gray-800 mb-4">O que vamos aprender hoje?</h2>
+                                 <div class="space-y-3">
+                                    <button data-lesson="video-call" class="lesson-button w-full bg-white rounded-xl text-left flex items-center gap-4 shadow-sm hover:bg-gray-100 transition-colors"><span class="text-3xl">📹</span><div><h3 class="font-semibold text-gray-900">Chamada de Vídeo</h3><p class="text-gray-600 text-sm">Veja e fale com a sua família.</p></div></button>
+                                    <button data-lesson="whatsapp" class="lesson-button w-full bg-white rounded-xl text-left flex items-center gap-4 shadow-sm hover:bg-gray-100 transition-colors"><span class="text-3xl">💬</span><div><h3 class="font-semibold text-gray-900">Usar o WhatsApp</h3><p class="text-gray-600 text-sm">Mande mensagens e fotos.</p></div></button>
+                                    <button data-lesson="facebook" class="lesson-button w-full bg-white rounded-xl text-left flex items-center gap-4 shadow-sm hover:bg-gray-100 transition-colors"><span class="text-3xl">👍</span><div><h3 class="font-semibold text-gray-900">Ver Fotos no Facebook</h3><p class="text-gray-600 text-sm">Acompanhe as novidades.</p></div></button>
+                                    <button data-lesson="services" class="lesson-button w-full bg-white rounded-xl text-left flex items-center gap-4 shadow-sm hover:bg-gray-100 transition-colors"><span class="text-3xl">🏥</span><div><h3 class="font-semibold text-gray-900">Marcar Consultas</h3><p class="text-gray-600 text-sm">Acesse serviços de saúde.</p></div></button>
+                                 </div>
+                            </main>
+                        </div>
+
+                        <!-- TELA DE TUTORIAL DO APP (escondida) -->
+                        <div id="tutorial-screen-app" class="app-content hidden flex-col h-full">
+                            <header class="bg-[#aa9ebb] text-white p-3 flex items-center shrink-0">
+                                <button id="back-button" class="p-2 rounded-full hover:bg-[#998dab]">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                                </button>
+                                <h2 id="tutorial-title" class="text-xl font-bold text-center flex-grow pr-8">Título</h2>
+                            </header>
+                            <main class="flex-grow p-4 overflow-y-auto app-screen text-base">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Passo 1: Assista ao vídeo</h3>
+                                <div class="bg-gray-900 text-white flex items-center justify-center rounded-lg aspect-video mb-4">
+                                    <p>[Vídeo Tutorial Simples Aqui]</p>
+                                </div>
+                                <div id="tutorial-steps" class="text-gray-700 space-y-3"></div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-lg leading-relaxed">
+                    <p>Para enfrentar esse desafio, desenvolvemos o <strong> Conecta Vovô</strong>, uma solução tecnológica pensada especialmente para o público idoso. Trata-se de um aplicativo e plataforma web que ensina, de forma simples e intuitiva, a usar as ferramentas digitais do dia a dia.</p>
+                    <p class="mt-4">Com vídeos curtos, tutoriais passo a passo e uma interface com letras grandes, nosso objetivo é dar autonomia para que eles possam se conectar com o mundo digital de forma segura e confiante.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Canvas do Projeto -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold text-center mb-8 text-gray-900">Canvas do Projeto de Impacto Social</h2>
+            <div class="bg-white p-8 rounded-2xl shadow-md overflow-x-auto">
+                <table class="w-full canvas-table">
+                    <tbody>
+                        <tr>
+                            <th>1. O Problema</th>
+                            <td>Muitos idosos não sabem usar tecnologias básicas como smartphones ou internet. Isso os exclui socialmente e dificulta o acesso a serviços essenciais.</td>
+                        </tr>
+                        <tr>
+                            <th>2. A Solução Proposta</th>
+                            <td>Aplicativo “Conecta Vovô”: ensina, com vídeos e tutoriais simples, como usar celular, redes sociais e serviços online. A solução também tem uma versão web.</td>
+                        </tr>
+                        <tr>
+                            <th>3. Público-alvo</th>
+                            <td>Idosos com baixa familiaridade com tecnologia, principalmente de áreas periféricas ou rurais.</td>
+                        </tr>
+                        <tr>
+                            <th>4. Proposta de Valor</th>
+                            <td>O público ganha autonomia, melhora a comunicação e obtém acesso digital. A solução é mais acessível que outras, pois foi criada pensando nas necessidades específicas dos idosos (didática, interface e ritmo adaptados).</td>
+                        </tr>
+                        <tr>
+                            <th>5. Inclusão e Acessibilidade</th>
+                            <td>A interface tem letras grandes, linguagem simples, e vídeos com áudio claro. A solução é leve para funcionar em celulares antigos ou com internet lenta. O design segue as diretrizes da WCAG (Web Content Accessibility Guidelines).</td>
+                        </tr>
+                        <tr>
+                            <th>6. Impacto Social Esperado</th>
+                            <td>Espera-se a inclusão digital de milhares de idosos, a redução do isolamento social e a melhoria no acesso a serviços públicos e privados. O sucesso será medido pelo número de usuários ativos e pelo índice de satisfação reportado.</td>
+                        </tr>
+                        <tr>
+                            <th>7. Sustentabilidade do Projeto</th>
+                            <td>O projeto é um negócio social com uma versão gratuita e busca parcerias com prefeituras e secretarias de assistência social. O código será de fonte aberta (open-source) para incentivar a colaboração, com uma preocupação ambiental no uso de servidores eficientes (TI Verde).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Rodapé e Créditos -->
+    <footer class="bg-purple-800 text-white">
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p class="text-lg">Projeto Acadêmico de Impacto Social</p>
+            <p class="mt-2 text-gray-400">Desenvolvido por: <span class="font-semibold">Flavio Vieira</span></p>
+        </div>
+    </footer>
+
+    <script>
+        const tutorials = {
+            'video-call': {
+                title: 'Chamada de Vídeo',
+                steps: `
+                    <h3 class="text-lg font-semibold text-gray-800">Passo 2: Siga as instruções</h3>
+                    <p>1. Abra o aplicativo de <b class="font-semibold text-green-600">WhatsApp</b>.</p>
+                    <p>2. Escolha a pessoa com quem quer falar.</p>
+                    <p>3. Toque no ícone da <b class="font-semibold text-blue-600">câmera (📹)</b> no canto de cima.</p>
+                    <p>4. Espere a pessoa atender. Pronto!</p>
+                `
+            },
+            'whatsapp': {
+                title: 'Usar o WhatsApp',
+                steps: `
+                    <h3 class="text-lg font-semibold text-gray-800">Passo 2: Siga as instruções</h3>
+                    <p>1. Abra o <b class="font-semibold text-green-600">WhatsApp</b>.</p>
+                    <p>2. Toque na conversa da pessoa ou grupo.</p>
+                    <p>3. Escreva sua mensagem na barra de baixo.</p>
+                    <p>4. Toque na <b class="font-semibold text-green-600">seta (➤)</b> para enviar.</p>
+                `
+            },
+            'facebook': {
+                title: 'Ver Fotos no Facebook',
+                steps: `
+                     <h3 class="text-lg font-semibold text-gray-800">Passo 2: Siga as instruções</h3>
+                    <p>1. Abra o aplicativo do <b class="font-semibold text-blue-800">Facebook</b>.</p>
+                    <p>2. A tela inicial já mostra as novidades.</p>
+                    <p>3. Role a tela para baixo com o dedo para ver mais.</p>
+                    <p>4. Toque no <b class="font-semibold text-blue-600">"Curtir" (👍)</b> se você gostou de algo.</p>
+                `
+            },
+            'services': {
+                title: 'Marcar Consultas Online',
+                steps: `
+                     <h3 class="text-lg font-semibold text-gray-800">Passo 2: Siga as instruções</h3>
+                    <p>1. Abra o site ou aplicativo do seu plano de saúde.</p>
+                    <p>2. Procure pela opção <b class="font-semibold text-gray-800">"Agendar Consulta"</b>.</p>
+                    <p>3. Escolha a especialidade e o médico.</p>
+                    <p>4. Selecione o melhor dia e horário para você e confirme.</p>
+                `
+            }
+        };
+
+        const homeScreenApp = document.getElementById('home-screen-app');
+        const tutorialScreenApp = document.getElementById('tutorial-screen-app');
+        const lessonButtons = document.querySelectorAll('.lesson-button');
+        const backButton = document.getElementById('back-button');
+        const tutorialTitle = document.getElementById('tutorial-title');
+        const tutorialSteps = document.getElementById('tutorial-steps');
+
+        function showAppScreen(screen) {
+            if (screen === 'tutorial') {
+                homeScreenApp.classList.add('hidden');
+                tutorialScreenApp.classList.remove('hidden');
+            } else {
+                tutorialScreenApp.classList.add('hidden');
+                homeScreenApp.classList.remove('hidden');
+            }
+        }
+
+        lessonButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lessonKey = button.dataset.lesson;
+                const lessonData = tutorials[lessonKey];
+                
+                if (lessonData) {
+                    tutorialTitle.textContent = lessonData.title;
+                    tutorialSteps.innerHTML = lessonData.steps;
+                    showAppScreen('tutorial');
+                }
+            });
+        });
+
+        backButton.addEventListener('click', () => {
+            showAppScreen('home');
+        });
+    </script>
+
+</body>
+</html>
+
